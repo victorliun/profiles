@@ -1,0 +1,16 @@
+mkdir ~/dotfiles
+cd ~/dotfiles
+mv ~/.vim  vim
+mv ~/.vimrc vimrc
+git init
+git add vim
+git add vimrc
+
+Makefile:
+init:
+        ln -fs `pwd`/vim    ~/.vim
+        ln -fs `pwd`/vimrc   ~/.vimrc
+
+sync:
+        git pull
+        git push
